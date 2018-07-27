@@ -1,15 +1,15 @@
+'use strict';
+
 console.log('Test');
 
 // JSX - Javascript XML
 
-//let template = <p>This is JSX from app.js!</p>
+var template = React.createElement(
+  'p',
+  null,
+  'This is JSX from app.js!'
+);
 
-let template = React.createElement(
-    "h1",
-    { id: "someid" },
-    "Something new"
-)
-
-let appRoot = document.getElementById('app');
+var appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
