@@ -7,7 +7,7 @@ console.log('Test');
 var app = {
     title: "Indecision App",
     subtitle: "Subtitle",
-    options: ['One', 'Two']
+    options: []
 };
 
 var onFormSubmit = function onFormSubmit(e) {
@@ -61,16 +61,13 @@ var renderApp = function renderApp() {
         React.createElement(
             "ol",
             null,
-            React.createElement(
-                "li",
-                null,
-                "Item 1"
-            ),
-            React.createElement(
-                "li",
-                null,
-                "Item 2"
-            )
+            app.options.map(function (e) {
+                return React.createElement(
+                    "li",
+                    { key: e },
+                    e
+                );
+            })
         ),
         React.createElement(
             "form",

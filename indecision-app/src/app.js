@@ -5,7 +5,7 @@ console.log('Test');
 const app = {
     title: "Indecision App",
     subtitle: "Subtitle",
-    options: ['One', 'Two']
+    options: []
 }
 
 const onFormSubmit = (e) => {
@@ -36,8 +36,9 @@ const renderApp = () => {
             <p>{app.options.length}</p>
             <button onClick={removeAll}>Remove all</button>
             <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
+                {
+                    app.options.map( (e) => <li key={e}>{e}</li>)
+                }
             </ol>
             <form onSubmit={onFormSubmit}>
                 <input type="text" name="option"/>
@@ -49,6 +50,3 @@ const renderApp = () => {
 };
 
 renderApp();
-
-
-
